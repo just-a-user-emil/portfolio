@@ -1,0 +1,484 @@
+<!doctype html>
+<html>
+<head>
+    <title>MyPortfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="portfoliyo.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black-100">
+  <nav class="bg-gray-800 fixed top-0 left-0 w-full ">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+          <div class="flex flex-shrink-0 items-center">
+            <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-20 ">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class=" font-bold text-blue-300 text-2xl absolute top-4 left-0 ">EmilBinoy</a>
+
+              <a href="#home" class="rounded-md  px-3 py-2 text-sm font-medium text-white" aria-current="page p-4">Home</a>
+              <a href="#about" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">About</a>
+              <a href="#work" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">work</a>
+              <a href="#contact" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ">contact</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+  
+          <!-- Profile dropdown -->
+          <div class="relative ml-3">
+            <div>
+              <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">Open user menu</span>
+                <!-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""> -->
+              </button>
+            </div>
+  
+            <!--
+              Dropdown menu, show/hide based on menu state.
+  
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+            <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+               Active: "bg-gray-100", Not Active: "" 
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-blue-300 hover:bg-gray-700 hover:text-white">EmilBinoy</a>
+
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+        <a href="#home" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+        <a href="#about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+        <a href="#work" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">work</a>
+        <a href="#contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">contact</a>
+      </div>
+    </div>
+  </nav>
+  
+       <!-- parallax -->
+
+  <section class="parallax flex items-center justify-center text-white" id="home">
+    <h1 class="text-6xl font-bold">I'am Emil Binoy</h1>
+</section>
+
+   
+            <!-- about  -->
+ <div id="about">
+    
+
+    <div class="bg-gray-100" >
+    <div class="container mx-auto py-8">
+        <div class="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
+            <div class="col-span-4 sm:col-span-3">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <div class="flex flex-col items-center">
+                        <img src="WhatsApp Image 2024-08-12 at 2.57.43 PM.jpeg" class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
+
+                        </img>
+                        <h1 class="text-xl font-bold">Emil Binoy</h1>
+                        <p class="text-gray-700">Software Developer</p>
+                        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                            <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
+                            <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
+                        </div>
+                    </div>
+                    <hr class="my-6 border-t border-gray-300">
+                    <div class="flex flex-col">
+                        <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Skills</span>
+                        <ul>
+                            <li class="mb-2 skill">HTML</li>
+                            <div class="relative pt-1">
+                              <div class="flex mb-2 items-center justify-between">
+                                  <div class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                      80%
+                                  </div>
+                              </div>
+                              <div class="flex">
+                                  <div class="w-full bg-blue-200 rounded-full">
+                                      <div class="h-2 rounded-full bg-blue-600" style="width: 80%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                            <li class="mb-2">CSS</li>
+                            <div class="relative pt-1">
+                              <div class="flex mb-2 items-center justify-between">
+                                  <div class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                      60%
+                                  </div>
+                              </div>
+                              <div class="flex">
+                                  <div class="w-full bg-blue-200 rounded-full">
+                                      <div class="h-2 rounded-full bg-blue-600" style="width: 60%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+                            
+                            <li class="mb-2">JavaScript</li>
+                            <div class="relative pt-1">
+                              <div class="flex mb-2 items-center justify-between">
+                                  <div class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                      5%
+                                  </div>
+                              </div>
+                              <div class="flex">
+                                  <div class="w-full bg-blue-200 rounded-full">
+                                      <div class="h-2 rounded-full bg-blue-600" style="width: 5%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+                          <li class="mb-2">Tailwind Css</li>
+                          <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <div class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1">
+                                    40%
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-full bg-blue-200 rounded-full">
+                                    <div class="h-2 rounded-full bg-blue-600" style="width: 40%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-4 sm:col-span-9">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4">About Me</h2>
+                    <p class="text-gray-700">My name is Emil Binoy and iam a Web Developer. Iam studing at kristhu jyothi college and iam studing BCA (Batchuler of Cumputer Application).
+                      My home town was meenadom nearby puthuppali. I want to become a FullStack developer. Iam using tailwind CSS in Web pages. I want to create
+                      more web pages. And iam happy becuse iam a part of inovus labs (IEDC) in my college
+
+                    </p>
+
+                   
+
+
+
+                    
+            </div>
+        
+              <!-- servieces  -->
+     
+  <div class="col-span-4 sm:col-span-9 mt-10">
+    <div class="bg-white shadow rounded-lg p-6">
+            <h2 class="text-xl font-bold mt-6 mb-4">Experience</h2>
+                      <div class="mb-6">
+                          <div class="flex justify-between flex-wrap gap-2 w-full">
+                              <span class="text-gray-700 font-bold">HTML and CSS</span>
+                              <p>
+                                  <span class="text-gray-700 mr-2">At <span  class="text-blue-600">INOVUS LABS</span></span> 
+                                  <span class="text-gray-700">- 2024</span>
+                              </p>
+                          </div>
+                          <p class="mt-2">
+                              I was learned many tags in html and i learned different type features and uses of CSS
+                               it was an amazing experience for me. I do many of websites and i made a portfolio for me.
+                          </p>
+                      </div>
+                      <div class="mb-6">
+                          <div class="flex justify-between flex-wrap gap-2 w-full">
+                              <span class="text-gray-700 font-bold">TailWind</span>
+                              <p>
+                                  <span class="text-gray-700 mr-2">At <span  class="text-blue-600">INOVUS LABS</span></span>
+                                  <span class="text-gray-700">- 2024</span>
+                              </p>
+                          </div>
+                          <p class="mt-2">
+                              I learned TailWind in inovus labs. First i learned what is the use of  TailWind after
+                              that i do many of websites with help of TailWind and Chatgpt also that the pages become responive web pages
+                          </p>
+                      </div>
+                      <div class="mb-6">
+                          <div class="flex justify-between flex-wrap gap-2 w-full">
+                              <span class="text-gray-700 font-bold">Arduino</span>
+                              <p>
+                                <span class="text-gray-700 mr-2">At <span  class="text-blue-600">INOVUS LABS</span></span> 
+                                <span class="text-gray-700">- 2024</span>
+                              </p>
+                          </div>
+                          <p class="mt-2">
+                              I learned Arduino in STEPONE program contected by inovus labs. That was an amazing experience. 
+                              I do many thins with arduino example; light blinking and with IR sensor at the last i do a project 
+                              with Arduiono when any object comes front of the super sonic sencor the light will blink and the buzzer
+                              will make sound.
+                          </p>
+                      </div>
+                  </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+          <!-- work  -->
+          <section id="work" class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+                <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Works</h2>
+                    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore my projects. some of the projects are made with TailWind and others are using normal CSS and HTML</p>
+                </div> 
+                <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                    <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+
+                            <div class="relative overflow-hidden rounded-lg ">
+
+                                <img class="w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 " src="https://static.vecteezy.com/system/resources/previews/002/619/911/original/calculator-finance-sign-in-blue-background-vector.jpg" alt="Bonnie Avatar">
+                            
+                            </div>
+
+                            </a>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <a href="#">Web Calculator</a>
+                            </h3>
+                            <span class="text-blue-500 dark:text-gray-400">comimg soon....</span>
+                            <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">A calculator that have all functionalities. Can do multiple functions.</p>
+                            <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Reminde Me
+                            </button>
+                            
+                        </div>
+                    </div> 
+                    <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <div class="relative overflow-hidden rounded-lg ">
+                            <img class=" w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110" src="https://static-00.iconduck.com/assets.00/tic-tac-toe-icon-2048x2048-g58f0u84.png" alt="Jese Avatar">
+                            </div>
+                        </a>
+                        <div class="p-5 ">
+                            <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <a href="#">Tic Tac Toe</a>
+                            </h3>
+                            <span class="text-blue-500 dark:text-gray-400">coming soon....</span>
+                            <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">A 3x3 Tic Tac Toe App. You can play with fun and lot of effects.</p>
+                            <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Reminde Me
+                            </button>
+                            
+                        </div>
+                    </div> 
+                    <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <div class="relative overflow-hidden rounded-lg ">
+                            <img class="w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110" src="https://thumbs.dreamstime.com/b/historical-quiz-smartphone-interface-vector-template-mobile-app-page-black-design-layout-history-test-screen-flat-ui-180304914.jpg" alt="Michael Avatar">
+                            </div>
+                        </a>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <a href="#">Quize Web</a>
+                            </h3>
+                            <span class="text-blue-500 dark:text-gray-400">coming soon....</span>
+                            <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Quize App that can increase your knowledge. You can get points.</p>
+                            <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Reminde Me
+                            </button>
+                        </div>
+                    </div> 
+                    <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <div class="relative overflow-hidden rounded-lg ">
+                            <img class="w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110" src="https://i.pinimg.com/736x/8d/b2/1c/8db21ccf2a5bcdc0abaf017499d66c6c.jpg" alt="Sofia Avatar">
+                            </div>
+                        </a>
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <a href="#">Pac Man</a>
+                            </h3>
+                            <span class="text-blue-500 dark:text-gray-400">coming soon....</span>
+                            <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">A Pac Man game that will lead to an another world. Wait for this.</p>
+                            <button class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Reminde Me
+                            </button>
+                        </div>
+                    </div>  
+                </div>  
+            </div>
+          </section>
+
+<!-- contact -->
+<section class="bg-blue-50 dark:bg-slate-800" id="contact">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div class="mb-4">
+            <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
+                <p class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
+                    Contact
+                </p>
+                <h2
+                    class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+                    Get in Touch
+                </h2>
+                <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">If you have any work then contact me!
+                </p>
+            </div>
+        </div>
+        <div class="flex items-stretch justify-center">
+            <div class="grid md:grid-cols-2">
+                
+                <div class="card h-fit max-w-6xl p-5 md:p-12" id="form">
+                    <h2 class="mb-1 text-2xl font-bold dark:text-white">Ready to Get Started?</h2>
+                    <form id="contactForm">
+                        <div class="mb-6">
+                            <div class="mx-0 mb-1 sm:mb-4">
+                                <div class="mx-0 mb-1 sm:mb-4">
+                                    <label for="name" class="pb-1 text-xs uppercase tracking-wider"></label><input type="text" id="name" autocomplete="given-name" placeholder="Your name" class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0" name="name">
+                                </div>
+                                <div class="mx-0 mb-1 sm:mb-4">
+                                    <label for="email" class="pb-1 text-xs uppercase tracking-wider"></label><input type="email" id="email" autocomplete="email" placeholder="Your email address" class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0" name="email">
+                                </div>
+                            </div>
+                            <div class="mx-0 mb-1 sm:mb-4">
+                                <label for="textarea" class="pb-1 text-xs uppercase tracking-wider"></label><textarea id="textarea" name="textarea" cols="30" rows="5" placeholder="Write your message..." class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full bg-blue-800 text-white px-6 py-3 font-xl rounded-md sm:mb-0">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="h-full pr-6">
+                    <p class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
+                        Thank you for visiting our website!
+                         If you have any questions, comments, or inquiries, please don't hesitate to reach out.
+                          Whether you're interested in collaborating, seeking support, or just want to chat, I'd be delighted to hear
+                           from you. You can contact me directly through the form below, and I'll get back to you as soon as possible.
+                            Looking forward to connecting with you!.
+                    </p>
+                    <ul class="mb-6 md:mb-0">
+                        <li class="flex">
+                            <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                    <path
+                                        d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="ml-4 mb-4">
+                                <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">My Address
+                                </h3>
+                                <p class="text-gray-600 dark:text-slate-400">Meenadom P.O Kottayam</p>
+                                <p class="text-gray-600 dark:text-slate-400">Kerala,India</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <path
+                                        d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2">
+                                    </path>
+                                    <path d="M15 7a2 2 0 0 1 2 2"></path>
+                                    <path d="M15 3a6 6 0 0 1 6 6"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4 mb-4">
+                                <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact
+                                </h3>
+                                <p class="text-gray-600 dark:text-slate-400">Mobile: (+91) 8302013953</p>
+                                <p class="text-gray-600 dark:text-slate-400">Mail: emilbinoy@gmail.com</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-6 w-6">
+                                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                                    <path d="M12 7v5l3 3"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4 mb-4">
+                                <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Working
+                                    hours</h3>
+                                <p class="text-gray-600 dark:text-slate-400">Monday - Friday: 08:00 - 17:00</p>
+                                <p class="text-gray-600 dark:text-slate-400">Saturday &amp; Sunday: 08:00 - 12:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<h3 class="font-semibold text-center mt-3 -mb-2">
+  Find me on
+</h3>
+<div class="flex justify-center items-center gap-6 my-6">
+  
+  <a class="text-gray-700 hover:text-blue-600" aria-label="Visit TrendyMinds YouTube" href="https://www.youtube.com/channel/UCTnMulHkE0CBGMhuGHBzmAQ"
+      target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="h-6">
+          <path fill="currentColor"
+              d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+          </path>
+      </svg>
+  
+  <a class="text-gray-700 hover:text-blue-600" aria-label="Visit TrendyMinds Instagram" href="https://www.instagram.com/its_emilefx?igsh=aGlra3Vhb3N4aDlh"
+      target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6">
+          <path fill="currentColor"
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+          </path>
+      </svg>
+  </a>
+  <a class="text-gray-700 hover:text-blue-600" aria-label="Visit TrendyMinds GitHub" href="https://github.com/Emil-Binoy" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6">
+        <path fill="currentColor"
+            d="M224 0C100.29 0 0 100.29 0 224c0 99.7 64.8 183.9 153.1 213.5 11.2 2.1 15.3-4.9 15.3-10.9 0-5.4-.2-19.7-.3-38.7-62.3 13.6-75.5-30.1-75.5-30.1-10.2-26-24.9-32.9-24.9-32.9-20.3-13.9 1.5-13.6 1.5-13.6 22.4 1.6 34.2 23 34.2 23 19.9 34.1 52.2 24.3 64.9 18.6 2-14.4 7.8-24.4 14.2-30.1-49.6-5.6-101.5-24.8-101.5-110.6 0-24.5 8.8-44.4 23.2-60.1-2.3-5.6-10.1-28.1 2.2-58.8 0 0 18.8-6.1 61.6 23.3 17.9-4.9 37.2-7.3 56.3-7.3 19.1 0 38.4 2.4 56.3 7.3 42.8-29.3 61.6-23.3 61.6-23.3 12.3 30.7 4.5 53.2 2.2 58.8 14.4 15.7 23.2 35.6 23.2 60.1 0 85.8-51.9 105-101.7 110.5 8 6.9 15.1 20.4 15.1 41.1 0 29.7-.3 53.7-.3 60.9 0 6.1 4.1 13.1 15.4 10.9C359.2 407.9 448 323.7 448 224 448 100.29 347.71 0 224 0z">
+        </path>
+    </svg>
+</a>
+
+</div>
+</body>
+</html

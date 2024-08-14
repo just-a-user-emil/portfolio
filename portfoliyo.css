@@ -1,0 +1,29 @@
+.skill{
+    z-index: 0;
+    overflow: hidden;
+}
+
+nav{
+    z-index: 1000;
+}
+
+.parallax {
+    background-image: url('WhatsApp Image 2024-08-14 at 9.10.52 AM.jpeg'); /* Replace with your image URL */
+    background-attachment: fixed; /* Fixes the background image relative to the viewport */
+    background-position: center; /* Centers the background image */
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-repeat: no-repeat; /* Prevents repeating of the background image */
+    height: 100vh; /* Makes the parallax section full viewport height */
+}
+
+@media (max-width: 767px) {
+    .parallax {
+        background-attachment: scroll; /* Changes fixed background to scroll on smaller screens */
+        height: 60vh;
+    }
+
+    .parallax h1 {
+        font-size: 4rem; /* Adjust text size for smaller screens */
+    }
+
+}
