@@ -16,6 +16,84 @@ nav{
     height: 100vh; /* Makes the parallax section full viewport height */
 }
 
+.navbar-link {
+    position: relative;
+    color: #fafbfb; /* Tailwind text-gray-300 */
+    transition: color 0.3s ease;
+}
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.15s ease;
+}
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.navbar-link:hover,
+.navbar-link.active {
+    color: #0974f6; /* Tailwind text-white */
+}
+
+.section-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+.section-card:hover {
+    border-color: #0974f6; /* Tailwind blue-800 */
+}
+
+/* Basic styles for the navbar and menu */
+#mobile-menu {
+    transition: max-height 0.3s ease-out;
+}
+
+/* Add any other required styles */
+
+.hamburger-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-menu {
+    background-color: #444;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    transition: max-height 0.3s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-item, .menu-link {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    background-color: #555;
+}
+
 @media (max-width: 767px) {
     .parallax {
         background-attachment: scroll; /* Changes fixed background to scroll on smaller screens */
