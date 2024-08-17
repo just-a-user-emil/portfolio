@@ -101,7 +101,9 @@ nav{
     }
 
     .parallax h1 {
-        font-size: 4rem; /* Adjust text size for smaller screens */
+        font-size: 2.3rem; /* Adjust text size for smaller screens */
     }
-
+    /* #mobile-menu{
+        display: none;
+    } */
 }

@@ -1,13 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.navbar-link');
 
-    links.forEach(link => {
-      link.addEventListener('click', function () {
-        links.forEach(l => l.classList.remove('active')); // Remove 'active' from all links
-        this.classList.add('active'); // Add 'active' to the clicked link
-      });
+
+// navbar toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOpenIcon = document.getElementById('menu-open-icon');
+  const menuCloseIcon = document.getElementById('menu-close-icon');
+
+
+  mobileMenu.classList.add('hidden');
+  hamburger.addEventListener('click', function() {
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      menuOpenIcon.classList.add('hidden');
+      menuCloseIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+      menuOpenIcon.classList.remove('hidden');
+      menuCloseIcon.classList.add('hidden');
+    }
+  });
+});
+
+
+// Navlink click underine
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.navbar-link');
+
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      links.forEach(l => l.classList.remove('active')); // Remove 'active' from all links
+      this.classList.add('active'); // Add 'active' to the clicked link
     });
   });
+});
+
+
 
   
       // JavaScript to handle active link on scroll
@@ -41,22 +69,25 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
 
-    hamburger.addEventListener('click', function() {
-      if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        menuOpenIcon.classList.add('hidden');
-        menuCloseIcon.classList.remove('hidden');
-      } else {
-        mobileMenu.classList.add('hidden');
-        menuOpenIcon.classList.remove('hidden');
-        menuCloseIcon.classList.add('hidden');
-      }
-    });
-  });
- 
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get form values
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('textarea').value;
+
+  // Basic validation
+  if (!name || !email || !message) {
+      alert('Please fill out all fields.');
+      return;
+  }
+
+  // Create the mailto link
+  const mailtoLink = `mailto:emilbinoy06@gmail.com?subject=Contact Form Submission from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+
+  // Open the mail client
+  window.location.href = mailtoLink;
+});

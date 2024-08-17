@@ -8,110 +8,111 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black-100">
-  <nav class="bg-gray-800 fixed top-0 left-0 w-full ">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile menu button-->
-          <button type="button"  class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <!--
-              Icon when menu is closed.
+    <nav class="bg-gray-800 fixed top-0 left-0 w-full ">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button"  class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger">
+                        <span class="absolute -inset-0.5"></span>
+                        <span class="sr-only">Open main menu</span>
+                            <!--
+                            Icon when menu is closed.
+                
+                            Menu open: "hidden", Menu closed: "block"
+                            -->
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!--
+                            Icon when menu is open.
+                
+                            Menu open: "block", Menu closed: "hidden"
+                            -->
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                    </button>
+                </div>
+                
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
+                    <div class="flex flex-shrink-0 items-center">
+                        <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
+                    </div>
+                        <div class="hidden sm:ml-6 sm:block">
+                            <div class="flex space-x-20 ">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="#" class=" font-bold text-blue-300 text-2xl absolute top-4 left-0 ">EmilBinoy</a>
+
+                                <a href="#home" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page p-4">Home
+                                </a>
+                                <a href="#about" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">About
+
+                                <a href="#work" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">work</a>
+
+                                <a href="#contact" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ">contact</a>
+
+                            </div>
+                        </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
   
-              Menu open: "hidden", Menu closed: "block"
-            -->
-            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <!--
-              Icon when menu is open.
+                <!-- Profile dropdown -->
+                <div class="relative ml-3">
+                    <div>
+                        <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">Open user menu</span>
+                            <!-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""> -->
+                        </button>
+                    </div>
   
-              Menu open: "block", Menu closed: "hidden"
-            -->
-            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
-          <div class="flex flex-shrink-0 items-center">
-            <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
-          </div>
-          <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-20 ">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class=" font-bold text-blue-300 text-2xl absolute top-4 left-0 ">EmilBinoy</a>
-
-              <a href="#home" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page p-4">Home
-               </a>
-              <a href="#about" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">About
-
-              <a href="#work" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white p-4">work</a>
-
-              <a href="#contact" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white ">contact</a>
-
+                    <!--
+                    Dropdown menu, show/hide based on menu state.
+        
+                    Entering: "transition ease-out duration-100"
+                        From: "transform opacity-0 scale-95"
+                        To: "transform opacity-100 scale-100"
+                    Leaving: "transition ease-in duration-75"
+                        From: "transform opacity-100 scale-100"
+                        To: "transform opacity-0 scale-95"
+                    -->
+                    <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                    Active: "bg-gray-100", Not Active: "" 
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                    </div> -->
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-  
-          <!-- Profile dropdown -->
-          <div class="relative ml-3">
-            <div>
-              <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <!-- <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""> -->
-              </button>
-            </div>
-  
-            <!--
-              Dropdown menu, show/hide based on menu state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-            <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-               Active: "bg-gray-100", Not Active: "" 
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
   
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
       <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-blue-300 hover:bg-gray-700 hover:text-white">EmilBinoy</a>
 
-      <div class="space-y-1 px-2 pb-3 pt-2">
+        <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
-        <a href="#home" class="block navbar-link rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+        <a href="#home" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-300" aria-current="page">Home</a>
         <a href="#about" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
         <a href="#work" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">work</a>
         <a href="#contact" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">contact</a>
-      </div>
+        </div>
     </div>
-  </nav>
+    </nav>
   
        <!-- parallax -->
 
-  <section class="parallax flex items-center justify-center text-white" id="home">
-    <h1 class="text-6xl font-bold">I am Emil Binoy</h1>
-</section>
+    <section class="parallax flex items-center justify-center text-white" id="home">
+        <h1 class="text-6xl font-bold">I am Emil Binoy</h1>
+    </section>
 
    
-            <!-- about  -->
-             <section id="about">
- <div>
+    <!-- about  -->
+    <section id="about">
+    <div>
     
 
     <div class="bg-gray-100" >
@@ -124,7 +125,7 @@
 
                         </img>
                         <h1 class="text-xl font-bold">Emil Binoy</h1>
-                        <p class="text-gray-700">Software Developer</p>
+                            <p class="text-gray-700">Software Developer</p>
                         <div class="mt-6 flex flex-wrap gap-4 justify-center">
                             <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
                             <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
@@ -261,24 +262,22 @@
     </div>
 </div>
 </section>
+
           <!-- work  -->
-          <section id="work" class="bg-white dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-                <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Works</h2>
-                    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore my projects. some of the projects are made with TailWind and others are using normal CSS and HTML</p>
-                </div> 
-                <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-                    <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
 
-                            <div class="relative overflow-hidden rounded-lg ">
-
-                                <img class="w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 " src="https://static.vecteezy.com/system/resources/previews/002/619/911/original/calculator-finance-sign-in-blue-background-vector.jpg" alt="Bonnie Avatar">
-                            
-                            </div>
-
-                            </a>
+ <section id="work" class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Works</h2>
+            <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore my projects. some of the projects are made with TailWind and others are using normal CSS and HTML</p>
+        </div> 
+            <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <div class="relative overflow-hidden rounded-lg ">
+                            <img class="w-60 h-auto object-cover transition-transform duration-300 ease-in-out transform hover:scale-110 " src="https://static.vecteezy.com/system/resources/previews/002/619/911/original/calculator-finance-sign-in-blue-background-vector.jpg" alt="Bonnie Avatar">
+                        </div>
+                    </a>
                         <div class="p-5">
                             <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 <a href="#">Web Calculator</a>
@@ -416,7 +415,7 @@
         
         <div class="section-card p-5 md:p-12" id="form">
             <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-white">Ready to Get Started?</h2>
-            <form id="contactForm">
+            <form id="contactForm" action="mailto:emilbinoy06@gmail.com" method="post" enctype="text/plain"></form>>
                 <div class="mb-6">
                     <div class="mb-4">
                         <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
@@ -473,26 +472,8 @@
 </a>
 
 </div>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuOpenIcon = document.getElementById('menu-open-icon');
-      const menuCloseIcon = document.getElementById('menu-close-icon');
-
-      hamburger.addEventListener('click', function() {
-        if (mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.remove('hidden');
-          menuOpenIcon.classList.add('hidden');
-          menuCloseIcon.classList.remove('hidden');
-        } else {
-          mobileMenu.classList.add('hidden');
-          menuOpenIcon.classList.remove('hidden');
-          menuCloseIcon.classList.add('hidden');
-        }
-      });
-    });
+    
   </script>
 
   <script src="script.js"></script>
