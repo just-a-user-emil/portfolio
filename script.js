@@ -35,59 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function sendMail() {
+  var name = encodeURIComponent(document.getElementById('name').value);
+  var email = encodeURIComponent(document.getElementById('email').value);
+  var message = encodeURIComponent(document.getElementById('textarea').value);
+  var subject = "Message from " + name;
+  var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
 
-
-  
-      // JavaScript to handle active link on scroll
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.navbar-link');
-
-      function setActiveLink() {
-          let index = sections.length;
-          while (--index && window.scrollY + 5 < sections[index].offsetTop) {}
-          navLinks.forEach((link) => link.classList.remove('active'));
-          navLinks[index].classList.add('active');
-      }
-
-      window.addEventListener('scroll', setActiveLink);
-      setActiveLink();  // Initial check to set active link on page load
-  
-      emailjs.init("service_gccnfgj"); // Replace with your EmailJS user ID
-
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const form = event.target;
-
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
-      .then(function(response) {
-          alert('Message sent successfully!');
-          form.reset();
-      }, function(error) {
-          alert('Failed to send message. Please try again.');
-          console.error('Error:', error);
-      });
-});
-
-
-
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  // Get form values
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('textarea').value;
-
-  // Basic validation
-  if (!name || !email || !message) {
-      alert('Please fill out all fields.');
-      return;
-  }
-
-  // Create the mailto link
-  const mailtoLink = `mailto:emilbinoy06@gmail.com?subject=Contact Form Submission from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
-
-  // Open the mail client
-  window.location.href = mailtoLink;
-});
+  window.location.href = "mailto:emilbinoy06@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
+}

@@ -1,3 +1,4 @@
+ 
 .skill{
     z-index: 0;
     overflow: hidden;
@@ -8,7 +9,7 @@ nav{
 }
 
 .parallax {
-    background-image: url('WhatsApp Image 2024-08-14 at 9.10.52 AM.jpeg'); /* Replace with your image URL */
+    background-image: url('me.png'); /* Replace with your image URL */
     background-attachment: fixed; /* Fixes the background image relative to the viewport */
     background-position: center; /* Centers the background image */
     background-size: cover; /* Ensures the image covers the entire element */
@@ -93,6 +94,12 @@ nav{
 .menu-link:hover {
     background-color: #555;
 }
+.socials{
+    /* background-color: #0974f6; */
+    padding-bottom: 1em;
+}
+
+
 
 @media (max-width: 767px) {
     .parallax {
@@ -101,9 +108,9 @@ nav{
     }
 
     .parallax h1 {
-        font-size: 2.3rem; /* Adjust text size for smaller screens */
+        font-size: 2rem; /* Adjust text size for smaller screens */
     }
-    /* #mobile-menu{
-        display: none;
-    } */
+    
+    
+    
 }
