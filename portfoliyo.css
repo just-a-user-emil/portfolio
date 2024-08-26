@@ -9,12 +9,17 @@ nav{
 }
 
 .parallax {
-    background-image: url('me.png'); /* Replace with your image URL */
-    background-attachment: fixed; /* Fixes the background image relative to the viewport */
-    background-position: center; /* Centers the background image */
-    background-size: cover; /* Ensures the image covers the entire element */
-    background-repeat: no-repeat; /* Prevents repeating of the background image */
-    height: 100vh; /* Makes the parallax section full viewport height */
+    background-image: url('me.png'); /* Add your background image */
+    background-size: cover; /* Ensure the background image covers the element */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fix background image for parallax effect */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Full height of viewport */
+    width: 100%; /* Full width of viewport */
 }
 
 .navbar-link {
@@ -99,18 +104,24 @@ nav{
     padding-bottom: 1em;
 }
 
+.typewrite{
+    color: #0974f6;
+}
 
 
 @media (max-width: 767px) {
     .parallax {
         background-attachment: scroll; /* Changes fixed background to scroll on smaller screens */
-        height: 60vh;
+        height: 70vh;
     }
 
     .parallax h1 {
-        font-size: 2rem; /* Adjust text size for smaller screens */
+        font-size: 2.5rem; /* Adjust text size for smaller screens */
+        margin-top: 100px;
     }
-    
+    .parallax h2{
+        font-size: 1.5rem;
+    }
     
     
 }
