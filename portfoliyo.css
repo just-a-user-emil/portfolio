@@ -244,6 +244,7 @@ nav{
 /* Larger Tablets / Small Desktops (1024px and above) */
 @media (min-width: 1024px) {
     .container2 {
+        
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem; /* Increased space between items */
     }
