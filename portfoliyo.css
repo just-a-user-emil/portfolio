@@ -108,15 +108,13 @@ nav{
     color: #0974f6;
 }
 
-
-
 #loader {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--loader-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,12 +122,13 @@ nav{
 }
 
 .spinner {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid var(--spinner-border);
+    border-top: 8px solid var(--spinner-border-top);
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 1s linear infinite;
+
 }
 
 @keyframes spin {
@@ -137,6 +136,27 @@ nav{
     100% { transform: rotate(360deg); }
 }
 
+/* Dark mode detection using prefers-color-scheme */
+
+@media (prefers-color-scheme: dark) {
+    #loader {
+        background-color: #333;
+    }
+    .spinner {
+        border: 8px solid #555;
+        border-top: 8px solid #2231ff;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #loader {
+        background-color: #282222;
+    }
+    .spinner {
+        border: 8px solid #000000;
+        border-top: 8px solid #ffffff;
+    }
+}
 @media (max-width: 767px) {
     .parallax {
         height: 92.5vh;

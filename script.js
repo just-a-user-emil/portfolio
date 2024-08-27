@@ -1,5 +1,5 @@
 
-// script.js
+// loader
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   const content = document.getElementById('content');
@@ -44,19 +44,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
- // JavaScript to handle active link on scroll
- const sections = document.querySelectorAll('section[id]');
- const navLinks = document.querySelectorAll('.navbar-link');
 
- function setActiveLink() {
-     let index = sections.length;
-     while (--index && window.scrollY + 5 < sections[index].offsetTop) {}
-     navLinks.forEach((link) => link.classList.remove('active'));
-     navLinks[index].classList.add('active');
- }
- window.addEventListener('scroll', setActiveLink);
-      setActiveLink();  // Initial check to set active link on page load
+    // JavaScript to handle active link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-link');
 
+    function setActiveLink() {
+        let index = sections.length;
+        while (--index && window.scrollY + 5 < sections[index].offsetTop) {}
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();  // Initial check to set active link on page load
+
+
+      
 function sendMail() {
   var name = encodeURIComponent(document.getElementById('name').value);
   var email = encodeURIComponent(document.getElementById('email').value);
@@ -123,12 +127,3 @@ window.onload = function() {
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
 };
-function sendMail() {
-  var name = encodeURIComponent(document.getElementById('name').value);
-  var email = encodeURIComponent(document.getElementById('email').value);
-  var message = encodeURIComponent(document.getElementById('textarea').value);
-  var subject = "Message from " + name;
-  var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
-
-  window.location.href = "mailto:emilbinoy06@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
-}
