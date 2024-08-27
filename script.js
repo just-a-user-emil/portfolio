@@ -1,4 +1,13 @@
 
+// script.js
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('content');
+  
+  loader.style.display = 'none';
+  content.style.display = 'block';
+});
+
 
 // navbar toggle
 document.addEventListener('DOMContentLoaded', function() {
@@ -114,3 +123,12 @@ window.onload = function() {
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
 };
+function sendMail() {
+  var name = encodeURIComponent(document.getElementById('name').value);
+  var email = encodeURIComponent(document.getElementById('email').value);
+  var message = encodeURIComponent(document.getElementById('textarea').value);
+  var subject = "Message from " + name;
+  var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
+
+  window.location.href = "mailto:emilbinoy06@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
+}

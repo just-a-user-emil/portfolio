@@ -9,6 +9,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-black-100">
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+    <div id="content" style="display: none;">
+
     <nav class="bg-gray-200 dark:bg-gray-800 fixed top-0 left-0 w-full ">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
@@ -437,7 +442,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                            <input type="email" id="email" name="email" autocomplete="email" placeholder="Your email address" class="mt-1 block w-full rounded-md border border-gray-400 py-2 px-3 shadow-sm dark:bg-gray-800 dark:text-gray-300" required>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="Enter the Email Address of mine" class="mt-1 block w-full rounded-md border border-gray-400 py-2 px-3 shadow-sm dark:bg-gray-800 dark:text-gray-300" required>
                         </div>
                         <div class="mb-4">
                             <label for="textarea" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
@@ -447,26 +452,11 @@
                     <div class="text-center">
                         <button type="submit" class="w-full bg-blue-800 text-white px-6 py-3 font-medium rounded-md submit">Send Message</button>
                     </div>
-                </form>
-                <script>
-                    function sendMail() {
-                        var name = encodeURIComponent(document.getElementById('name').value);
-                        var email = encodeURIComponent(document.getElementById('email').value);
-                        var message = encodeURIComponent(document.getElementById('textarea').value);
-                        var subject = "Message from " + name;
-                        var body = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0AMessage: " + message;
-            
-                        window.location.href = "mailto:emilbinoy06@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + body;
-                    }
-                </script>
-            </div>
-            
-            
-
-            
-            </div>
+                </form>                
             </div>
         </div>
+    </div>
+</div>
 
 <div class="socials bg-black-100">
     <h3 class="font-semibold text-center mt-3 -mb-2 text-gray-900 dark:text-white">Find me on</h3>
@@ -499,6 +489,7 @@
     </div> 
     </div>
     </section>
+</div>
   <script src="script.js"></script>
   
 </body>
