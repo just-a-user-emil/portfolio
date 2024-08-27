@@ -4,6 +4,54 @@
     overflow: hidden;
 }
 
+
+/* From Uiverse.io by Navarog21 */ 
+.button2 {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button2::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    /* transition: 0.5s; */
+    transform-origin: center;
+  }
+  
+  .button2::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    /* background-color: #212121; */
+    transition: 0.5s;
+  }
+  
+  .button2:hover::before, button:hover::after {
+    transform: scale(0)
+  }
+  
+  .button2:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+
 nav{
     z-index: 1000;
 }
@@ -170,5 +218,12 @@ nav{
         font-size: 1.5rem;
     }
     
-    
+    .button2{
+        width: 8.5em;
+    }
+    .container2{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap: 5px;
+    }
 }
