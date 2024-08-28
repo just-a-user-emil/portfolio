@@ -17,7 +17,7 @@
     <nav class="bg-gray-200 dark:bg-gray-800 fixed top-0 left-0 w-full ">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
                     <!-- Mobile menu button-->
                     <button type="button"  class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger">
                         <span class="absolute -inset-0.5"></span>
@@ -43,20 +43,17 @@
                 
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
                     <div class="flex flex-shrink-0 items-center">
-                        <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> -->
+                        <a href="#" class=" font-bold text-blue-500 dark:text-blue-300 text-2xl absolute top-4 left-2 ">EmilBinoy</a>
+
                     </div>
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-20 ">
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                <a href="#" class=" font-bold text-blue-500 dark:text-blue-300 text-2xl absolute top-4 left-0 ">EmilBinoy</a>
 
-                                <a href="#home" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page p-4">Home
-                                </a>
-                                <a href="#about" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white p-4">About
-
-                                <a href="#work" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white p-4">work</a>
-
-                                <a href="#contact" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white ">contact</a>
+                                <a href="#home" id="home-link" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Home</a>
+                                <a href="#about" id="about-link" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
+                                <a href="#work" id="work-link" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white">Work</a>
+                                <a href="#contact" id="contact-link" class="rounded-md navbar-link px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
 
                             </div>
                         </div>
@@ -96,15 +93,14 @@
   
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu">
-      <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-blue-300 hover:bg-gray-700 hover:text-white">EmilBinoy</a>
 
         <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 
         <a href="#home" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300" aria-current="page">Home</a>
         <a href="#about" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300">About</a>
-        <a href="#work" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300">work</a>
-        <a href="#contact" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300">contact</a>
+        <a href="#work" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300">Work</a>
+        <a href="#contact" class="block navbar-link rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300">Contact</a>
         </div>
     </div>
     </nav>
@@ -135,7 +131,7 @@
 
                             </img>
                             <h1 class="text-xl font-bold text-gray-900 dark:text-white">Emil Binoy</h1>
-                                <p class="text-gray-700">Software Developer</p>
+                                <p class="text-gray-700 dark:text-gray-400">Software Developer</p>
                             <div class="mt-6 flex flex-wrap gap-4 justify-center">
                                 <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
                                 <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Resume</a>
@@ -241,7 +237,9 @@
     <section id="work" class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
             <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Works</h2>
+                <h2 class="font-heading mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white underline-heading">
+                    My Works
+                </h2>
                 <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore my projects. some of the projects are made with TailWind and others are using normal CSS and HTML</p>
             </div> 
             <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2 lg:grid-cols-4 text-center md:text-left">
@@ -338,13 +336,11 @@
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <div class="mb-4">
                 <div class="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
-                    <p class="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
-                        Contact
-                    </p>
-                    <h2
-                        class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+                    <h2 class="font-heading mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl underline-heading">
                         Get in Touch
                     </h2>
+                    
+
                     <p class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">If you have any work then contact me!
                     </p>
                 </div>

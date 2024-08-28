@@ -3,6 +3,30 @@
     z-index: 0;
     overflow: hidden;
 }
+.underline-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px; /* Space between text and underline */
+}
+
+.underline-heading::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start the underline from the middle */
+    bottom: 0;
+    width: 25%; /* Initial width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background: linear-gradient(90deg, #023dff, #00bfff); /* Gradient colors */
+    transform: translateX(-50%); /* Center the underline relative to its starting point */
+    transition: width 0.3s ease, transform 0.3s ease; /* Smooth transition for width and positioning */
+}
+
+.underline-heading:hover::before {
+    width: 100%; /* Full width on hover */
+    transform: translateX(-50%); /* Ensure the underline is centered relative to the text on hover */
+}
+
+
 
 
 /* From Uiverse.io by Navarog21 */ 
