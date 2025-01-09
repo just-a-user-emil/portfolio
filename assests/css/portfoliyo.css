@@ -81,7 +81,7 @@ nav{
 }
 
 .parallax {
-    background-image: url('imgs/me.png'); /* Add your background image */
+    background-image: url('/assests/images/me.png'); /* Add your background image */
     background-size: cover; /* Ensure the background image covers the element */
     background-position: center; /* Center the background image */
     background-attachment: fixed; /* Fix background image for parallax effect */
